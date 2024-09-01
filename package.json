@@ -1,0 +1,15 @@
+{
+    "name": "long-distance-connection",
+    "version": "1.0.0",
+    "description": "A website for long-distance relationships",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    },
+    "author": "Your Name",
+    "license": "ISC"
+  }
+  

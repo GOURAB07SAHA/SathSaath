@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Distance Connection</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Stay Connected</h1>
+        <button id="login-toggle">Login/Sign Up</button>
+    <!-- Our Photos Section in Header -->
+    <div id="our-photos">
+        <h2>Our Photos & Videos</h2>
+        <div class="gallery">
+            <div id="fullscreen-modal">
+                <span id="close-fullscreen">&times;</span>
+                <div class="fullscreen-content"></div>
+            </div>
+            
+        </div>
+    </div>
+    </header>
+<!-- Login and Sign Up Sections -->
+<div id="auth-sections" style="display: none;">
+    <!-- Login Section -->
+    <section id="login-section">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required>
+            
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showSignUpForm()">Sign Up</a></p>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section id="signup-section" style="display: none;">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" required>
+            
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" required>
+            
+            <label for="signup-name">Name:</label>
+            <input type="text" id="signup-name" required>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+    </section>
+</div>
+
+
+
+    
+
+
+    <div class="profiles-container">
+        <!-- Your Profile -->
+        <div class="profile yours">
+            <h2>Your Profile</h2>
+            <img src="C:\Users\Gourab Saha\Pictures\my pho.jpg" alt="Your Profile Picture">
+            <p id="your-name">Your Name: John Doe</p>
+            <p id="your-email">Email: john@example.com</p>
+            <p id="your-dob">Date of Birth: January 1, 1990</p>
+            <p id="your-status">Status: Connected</p>
+            <p>Your Unique ID: <span id="your-id">ID-kXShzEmE2</span></p>
+            <p>Scan this QR code to connect:</p>
+            <div id="qrcode"></div> <!-- QR code will be rendered here -->
+            <button onclick="editProfile()">Edit Profile</button>
+        </div>
+        <script>
+            // Generate and display your ID
+            const myID = generateUniqueID();
+            document.getElementById('your-id').textContent = myID;
+            
+            // Generate the QR code
+            QRCode.toCanvas(document.getElementById('qrcode'), myID, function (error) {
+                if (error) console.error(error);
+                console.log('QR code generated for ID:', myID);
+            });
+            </script>
+    
+        <!-- Their Profile (Initially Hidden) -->
+        <div class="profile theirs" id="their-profile" style="display: none;">
+            <h2>Their Profile</h2>
+            <img id="their-profile-pic" src="" alt="Their Profile Picture">
+            <p id="their-name">Name: </p>
+            <p id="their-status">Status: </p>
+        </div>
+    </div>
+    
+    <!-- Connection Section -->
+    <div class="connect-container">
+        <h3>Connect with Someone</h3>
+        <input type="text" id="connection-id" placeholder="Enter their ID or scan QR">
+        <button onclick="connectWithUser()">Connect</button>
+    </div>
+    
+
+    <section id="important-dates-section">
+        <h2>Important Dates</h2>
+        <ul id="important-dates">
+            <!-- List of important dates goes here -->
+            <li>Anniversary: <span>2024-09-15</span></li>
+            <li>Birthday: <span>2024-10-10</span></li>
+        </ul>
+        <button id="add-date">Add Date</button>
+    </section>
+
+    <section id="call-section">
+        <h2>Video/Audio Call</h2>
+        <div id="call-controls">
+            <button id="start-call">Start Call</button>
+            <button id="end-call">End Call</button>
+        </div>
+        <video id="local-video" autoplay></video>
+        <video id="remote-video" autoplay></video>
+    </section>
+
+    <section id="games-section">
+        <h2>Games</h2>
+        <button id="start-game">Start Game</button>
+        <!-- Game canvas or UI will go here -->
+    </section>
+
+    <section id="gifts-section">
+        <h2>Virtual Gifts</h2>
+        <button id="send-gift">Send Gift</button>
+        <!-- Virtual gift sending UI will go here -->
+    </section>
+
+    <section id="status-section">
+        <h2>Connection Status</h2>
+        <p>Connected with: <span id="connected-user">Jane Doe</span></p>
+        <p>Status: <span id="connection-status">gf-bf</span></p>
+        <button id="scan-qr">Scan QR Code</button>
+        <input type="text" id="enter-id" placeholder="Enter ID to Connect">
+        <button id="connect">Connect</button>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p>&copy; 2024 Long Distance Connection.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="server.js"></script>
+    <script src="package.json"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: pink;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Our Photos & Videos Section in Header */
+#our-photos {
+    margin-top: 20px;
+    background-color: #fff; /* Optional: light background for contrast */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#our-photos h2 {
+    font-size: 24px;
+    color: #ff4081;
+    margin-bottom: 15px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 15px; /* Space between items */
+}
+
+.gallery img, .gallery video {
+    width: 150px; /* Adjust the size as needed */
+    height: 150px;
+    border-radius: 10px; /* Optional: rounded corners */
+    object-fit: cover; /* Ensure media fits within its container */
+}
+
+.gallery video {
+    background-color: #000; /* Optional: background color for videos */
+}
+
+/* Action buttons (Download, Share, Delete) */
+.action-btn {
+    display: block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100px;
+    text-align: center;
+}
+
+.action-btn:hover {
+    background-color: #e63770;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+/* Fullscreen modal styles */
+#fullscreen-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Ensure it's above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with transparency */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fullscreen content styles */
+.fullscreen-content {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 10000px; /* Increase max width for larger display */
+    height: 100%; /* Occupy 90% of the screen height */
+    max-height: 10000px;
+    text-align: center;
+    object-fit: contain; /* Ensure the media keeps its aspect ratio */
+}
+
+.fullscreen-img, .fullscreen-video {
+    width: 100%; /* Use full width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure it doesn't exceed modal height */
+    object-fit: contain;
+}
+
+/* Close button styles */
+#close-fullscreen {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the modal content */
+}
+
+#close-fullscreen:hover,
+#close-fullscreen:focus {
+    color: #bbb;
+}
+
+
+/* See More button styling */
+#see-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#see-more:hover {
+    background-color: #e63770;
+}
+
+header button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Auth Sections */
+#auth-sections {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Individual Form Section */
+section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e63770;
+}
+
+
+/* Profile Container */
+.profiles-container {
+    display: flex;
+    justify-content: center; /* Center the profiles on the page */
+    margin: 20px;
+}
+
+/* Individual Profile Box */
+.profile {
+    width: 300px; /* Width of the profile box */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text inside */
+    margin: 10px; /* Space between profile boxes */
+    position: relative; /* For absolute positioning of QR code */
+}
+
+/* Profile Header */
+.profile h2 {
+    font-size: 24px;
+    color: #ff4081; /* Header color */
+    margin-bottom: 20px;
+}
+
+/* Profile Image */
+.profile img {
+    width: 150px; /* Profile picture size */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    margin-bottom: 20px;
+    object-fit: cover; /* Ensures the image covers the entire circle */
+}
+
+/* Profile Details */
+.profile p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* QR Code */
+.profile #qrcode {
+    width: 150px;  /* Set width */
+    height: 150px; /* Set height to match width */
+    margin: 20px auto; /* Center horizontally */
+    display: flex; /* Use flexbox to center QR code */
+    justify-content: center; /* Center QR code horizontally */
+    align-items: center; /* Center QR code vertically */
+    
+}
+
+/* Buttons */
+.profile button {
+    padding: 10px 20px;
+    background-color: #ff4081; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile button:hover {
+    background-color: #e63770; /* Darker pink on hover */
+}
+
+
+.connect-container {
+    margin-top: 30px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#call-section, #games-section {
+    background-color: lightgreen;
+}
+
+#gifts-section {
+    background-color: lightblue;
+}
+
+/* Footer */
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+    width: 100%;
+}
